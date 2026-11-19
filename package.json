@@ -1,0 +1,19 @@
+{
+  "name": "payflow",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["apps/web", "apps/api"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @payflow/api\" \"npm run dev -w @payflow/web\"",
+    "dev:api": "npm run dev -w @payflow/api",
+    "dev:web": "npm run dev -w @payflow/web",
+    "build": "npm run build -w @payflow/web",
+    "start:api": "npm run start -w @payflow/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
