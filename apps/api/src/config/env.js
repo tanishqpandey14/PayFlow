@@ -11,7 +11,7 @@ if (!jwtSecret || Buffer.byteLength(jwtSecret, "utf8") < 32) {
 }
 
 export const env = {
-  apiPort: Number(process.env.API_PORT || 4000),
+  apiPort: Number(process.env.PORT || process.env.API_PORT || 4000),
   webOrigin: process.env.WEB_ORIGIN || "http://localhost:5173",
   mongoUri:
     process.env.MONGODB_URI ||
